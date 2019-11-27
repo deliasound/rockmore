@@ -1,216 +1,88 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-<title>timingsrc - Example Sequencer (multi-device)</title>
-<link rel="stylesheet" type="text/css" href="/timingsrc/stylesheets/normalize.css" media="screen">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="UTF-8"
+    />
+    <title>
+      A synchronized beat, from timingsrc - Example Sequencer (multi-device)
+	</title>
 
-<link href='/timingsrc/stylesheets/googlefontfamily.css' rel='stylesheet' type='text/css'>
-<!--
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
--->
-<link rel="stylesheet" type="text/css" href="/timingsrc/stylesheets/stylesheet.css" media="screen">
-<link rel="stylesheet" type="text/css" href="/timingsrc/stylesheets/github-light.css" media="screen">
-<link href="/timingsrc/stylesheets/syntax.css" rel="stylesheet" type='text/css'>
-
-
-
-<script text="javascript" src="https://webtiming.github.io/timingsrc/lib/timingsrc-v2.js"></script>
-<script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.9/Tone.js"></script>
-
-
-<script text="javascript" src="exp_sequencer.js"></script>
-
-
-
-<script type="text/javascript" src="https://www.mcorp.no/lib/mcorp-2.0.js"></script>
-<script type="text/javascript">
-	var APPID_MCORP = "8456579076771837888";
-	var app = MCorp.app(APPID_MCORP, {anon:true});
-	app.run = function () {
-		//console.log(app.motions.shared);
-		if (document.readyState === "complete") run(app.motions.shared);
-		else window.onload = function () {run(app.motions.shared);};
-	};
-	app.init();
-</script>
-
-
-
-
-
+    <script
+      text="javascript"
+      src="https://webtiming.github.io/timingsrc/lib/timingsrc-v2.js"
+    ></script>
+    <script
+      text="javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.9/Tone.js"
+    ></script>
+    <script text="javascript" src="exp_sequencer.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.mcorp.no/lib/mcorp-2.0.js"
+    ></script>
+    <script type="text/javascript">
+      var APPID_MCORP = "8456579076771837888";
+      var app = MCorp.app(APPID_MCORP, { anon: true });
+      app.run = function() {
+        if (document.readyState === "complete") run(app.motions.shared);
+        else
+          window.onload = function() {
+            run(app.motions.shared);
+          };
+      };
+      app.init();
+    </script>
   </head>
+
   <body>
     <section class="page-header">
-      
-<h1 class="project-name">timingsrc</h1>
-<h2 class="project-tagline">A programming model for timed Web applications, based on the Timing Object. </br>Precise timing, synchronization and control enabled for single-device and multi-device Web applications.</h2>
-<!--
-<a href="https://github.com/webtiming/timingsrc" class="btn">View on GitHub</a>
-<a href="https://github.com/webtiming/timingsrc/zipball/master" class="btn">Download .zip</a>
-<a href="https://github.com/webtiming/timingsrc/tarball/master" class="btn">Download .tar.gz</a>
--->
-
-
- 
+      <h1 class="project-name">timingsrc</h1>
     </section>
     <section class="main-content">
-      <div>
-  <p>
-  	<!--
-      
-      	<a  href="/timingsrc/doc/api.html">API</a>
-      
-      	<a  href="/timingsrc/doc/api_mediasync.html">MediaSync API</a>
-      
-      	<a  href="/timingsrc/doc/api_sequencer.html">Sequencer API</a>
-      
-      	<a  href="/timingsrc/doc/api_timingcallback.html">Timing Callback API</a>
-      
-      	<a  href="/timingsrc/doc/api_timingconverter.html">Timing Converter API</a>
-      
-      	<a  href="/timingsrc/doc/api_timingobject.html">Timing Object API</a>
-      
-      	<a  href="/timingsrc/doc/api_timingprovider.html">Timing Provider API</a>
-      
-      	<a  href="/timingsrc/doc/background_eventing.html">Initial Events</a>
-      
-      	<a  href="/timingsrc/doc/background_mediasync.html">Background MediaSync</a>
-      
-      	<a  href="/timingsrc/doc/background_sequencer.html">Sequencer Background</a>
-      
-      	<a  href="/timingsrc/doc/background_timingconverter.html">Timing Converter Background</a>
-      
-      	<a  href="/timingsrc/doc/background_timingobject.html">Timing Object Background</a>
-      
-      	<a  href="/timingsrc/doc/examples.html">Examples</a>
-      
-      	<a  href="/timingsrc/doc/exp_mediasync.html">Example MediaSync (page-local)</a>
-      
-      	<a  href="/timingsrc/doc/exp_sequencer.html">Example Sequencer (page-local)</a>
-      
-      	<a  href="/timingsrc/doc/exp_timingcallback.html">Example Timing Callback (page-local)</a>
-      
-      	<a  href="/timingsrc/doc/exp_timingconverter.html">Example Timing Converter (page-local)</a>
-      
-      	<a  href="/timingsrc/doc/exp_timingobject.html">Example Timing Object (page-local)</a>
-      
-      	<a  href="/timingsrc/doc/exp_windowsequencer.html">Example window sequencing mode (page-local)</a>
-      
-      	<a  href="/timingsrc/doc/hello.html">Hello World</a>
-      
-      	<a  href="/timingsrc/doc/">Documentation</a>
-      
-      	<a  href="/timingsrc/">Home</a>
-      
-      	<a  href="/timingsrc/doc/online_mediasync.html">Example MediaSync (multi-device)</a>
-      
-      	<a class="active" href="/timingsrc/doc/online_sequencer.html">Example Sequencer (multi-device)</a>
-      
-      	<a  href="/timingsrc/doc/online_timingcallback.html">Example Timing Callback (multi-device)</a>
-      
-      	<a  href="/timingsrc/doc/online_timingconverter.html">Example Timing Converter (multi-device)</a>
-      
-      	<a  href="/timingsrc/doc/online_timingobject.html">Example Timing Object (multi-device)</a>
-      
-      	<a  href="/timingsrc/doc/online_windowsequencer.html">Example window sequencing mode(multi-device)</a>
-      
-      	<a  href="/timingsrc/doc/shared_motion.html">Shared Motion</a>
-      
-      	<a  href="/timingsrc/doc/usage_sequencer.html">Sequencer Usage</a>
-      
-      	<a  href="/timingsrc/assets/css/style.css"></a>
-      
-      -->
-    	<a href="/timingsrc/index.html">Home</a>
-      <a href="/timingsrc/doc/hello.html">HelloWorld!</a>
-      <a href="/timingsrc/doc/index.html">Doc</a>
-      <a href="/timingsrc/doc/api.html">API</a>
-      <a href="/timingsrc/doc/examples.html">Examples</a>
-      <!--
-      <a href="/timingsrc/usage.html">Usage</a>
-      <a href="/timingsrc/overview.html">Overview</a>
-      <a href="demos.html">Demos</a>
-    	-->
-      <a href="https://github.com/webtiming/timingsrc">GitHub</a>
-   
-    	
-    	<!--
-  	<a href="integration.html">Integration</a>
-  	-->
-  </p>
-<div>
-
       <h1>Example Sequencer (multi-device)</h1>
       <style type="text/css">
-	.active {color:red}
-</style>
+        .active {
+          color: red;
+        }
+      </style>
 
-<ul>
-  <li><a href="background_sequencer.html">Sequencer Background</a></li>
-  <li><a href="api_sequencer.html">Sequencer API</a></li>
-  <li><a href="usage_sequencer.html">Sequencer Usage</a></li>
-</ul>
+      <p>
+        The Sequencer provides enter and exit events based on a moving point.
+        This moving point is implemented and controlled by a timing object.
+        Sequencer events is used to control styling (red color).
+      </p>
 
-<p>The Sequencer provides enter and exit events based on a moving point. This moving point is implemented and controlled by a timing object.
-Sequencer events is used to control styling (red color).</p>
+      <h4 id="demo-tips">Demo Tips</h4>
 
-<h4 id="demo-tips">Demo Tips</h4>
+      <ul>
+        <li>
+          open this page on multiple devices (or at least multiple browser tabs)
+          (simultaneously) to verify multi-device timing.
+        </li>
+        <li>
+          the timing provider is shared globally, so others might be playing
+          with demo too…
+        </li>
+        <li>
+          try reloading the demo on one device/tab while the demo is running on
+          others.
+        </li>
+      </ul>
 
-<ul>
-  <li>open this page on multiple devices (or at least multiple browser tabs) (simultaneously) to verify multi-device timing.</li>
-  <li>the timing provider is shared globally, so others might be playing with demo too…</li>
-  <li>try reloading the demo on one device/tab while the demo is running on others.</li>
-</ul>
+      <h4 id="demo">Demo</h4>
 
-<h4 id="demo">Demo</h4>
-
-<p>
-  <!-- Timing Objects position --> 
-  Timing Object position <span id="pos" style="font-weight:bold"></span>
-</p>
-<p>
-  <!-- Timing Object Controls -->
-  <button id="play">Play</button>
-  <button id="pause">Pause</button>
-  <button id="reset">Reset</button>
-  <button id="backwards">Backwards</button>
-</p>
-<p>
-  <div id="data"></div>
-</p>
-
-<h4 id="javascript">JavaScript</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Timing Object</span>
-<span class="kd">var</span> <span class="nx">to</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TIMINGSRC</span><span class="p">.</span><span class="nx">TimingObject</span><span class="p">({</span><span class="na">provider</span><span class="p">:</span><span class="nx">timingProvider</span><span class="p">});</span>
-
-<span class="c1">// Sequencer</span>
-<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TIMINGSRC</span><span class="p">.</span><span class="nx">Sequencer</span><span class="p">(</span><span class="nx">to</span><span class="p">);</span> 
-
-<span class="c1">// Load data</span>
-<span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">request</span><span class="p">();</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">r</span><span class="p">.</span><span class="nx">addCue</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">new</span> <span class="nx">TIMINGSRC</span><span class="p">.</span><span class="nx">Interval</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">start</span><span class="p">,</span> <span class="nx">data</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">end</span><span class="p">));</span>
-<span class="p">});</span>
-<span class="nx">r</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
-
-<span class="c1">// Register Handlers</span>
-<span class="nx">s</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"enter"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span>
-  <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"active"</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="nx">s</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"exit"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span>
-  <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">"active"</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-      <footer class="site-footer">
-	<span class="site-footer-owner"><a href="https://github.com/webtiming/timingsrc">timingsrc</a> is maintained by <a href="https://github.com/webtiming">webtiming</a>.</span>
-	<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-</footer>
-
-    </section>  
+      <p>
+        Timing Object position
+        <span id="pos" style="font-weight:bold"></span>
+      </p>
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+      <button id="backwards">Backwards</button>
+      <div id="data"></div>
+    </section>
   </body>
 </html>

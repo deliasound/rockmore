@@ -39,9 +39,10 @@ var run = function(timingProvider) {
     z: { data: "Z", start: 50, end: 51 }
   };
 
-  // load timed data into sequencer
+  //create a synth and connect it to the master output (your speakers)
   var synth = new Tone.Synth().toMaster();
 
+  // load timed data into sequencer
   Object.keys(data).forEach(function(key) {
     s.addCue(key, new Interval(data[key].start, data[key].end), data);
   });
@@ -75,7 +76,6 @@ var run = function(timingProvider) {
   s.on("change", function(e) {
     var el = document.getElementById(e.key);
     el.classList.add("active");
-    //create a synth and connect it to the master output (your speakers)
 
     //play a middle 'C' for the duration of an 8th note
     synth.triggerAttackRelease("C4", "8n");
