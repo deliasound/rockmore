@@ -1,0 +1,15 @@
+{
+  "name": "timing_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "debug": "npm run build && node ./dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "timing-provider": "^3.0.31"
+  }
+}
