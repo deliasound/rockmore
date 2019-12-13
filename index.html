@@ -18,23 +18,22 @@
       text="javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.9/Tone.js"
     ></script>
-    <script text="javascript" src="exp_sequencer.js"></script>
-    <script
-      type="text/javascript"
-      src="https://www.mcorp.no/lib/mcorp-2.0.js"
-    ></script>
-    <script type="text/javascript">
-      var APPID_MCORP = "8456579076771837888";
-      var app = MCorp.app(APPID_MCORP, { anon: true });
-      app.run = function() {
-        if (document.readyState === "complete") run(app.motions.shared);
-        else
-          window.onload = function() {
-            run(app.motions.shared);
-          };
-      };
-      app.init();
-    </script>
+    <script text="javascript" src="euclidean.js"></script>
+   
+    
+<script type="text/javascript" src="https://www.mcorp.no/lib/mcorp-2.0.js"></script>
+<script type="text/javascript">
+  var APPID_MCORP = "8456579076771837888";
+  var APPID_MCORP = "5991849117386347361";
+
+	var app = MCorp.app(APPID_MCORP, {anon:true});
+	app.run = function () {
+		//console.log(app.motions.shared);
+		if (document.readyState === "complete") run(app.motions.shared);
+		else window.onload = function () {run(app.motions.shared);};
+	};
+	app.init();
+</script>
   </head>
 
   <body>
@@ -42,42 +41,11 @@
       <h1 class="project-name">timingsrc</h1>
     </section>
     <section class="main-content">
-      <h1>Example Sequencer (multi-device)</h1>
-      <style type="text/css">
-        .active {
-          color: red;
-        }
-      </style>
-
-      <p>
-        The Sequencer provides enter and exit events based on a moving point.
-        This moving point is implemented and controlled by a timing object.
-        Sequencer events is used to control styling (red color).
-      </p>
-
-      <h4 id="demo-tips">Demo Tips</h4>
-
-      <ul>
-        <li>
-          open this page on multiple devices (or at least multiple browser tabs)
-          (simultaneously) to verify multi-device timing.
-        </li>
-        <li>
-          the timing provider is shared globally, so others might be playing
-          with demo too…
-        </li>
-        <li>
-          try reloading the demo on one device/tab while the demo is running on
-          others.
-        </li>
-      </ul>
+   
 
       <h4 id="demo">Demo</h4>
 
-      <p>
-        Timing Object position
-        <span id="pos" style="font-weight:bold"></span>
-      </p>
+    
       <button id="play">Play</button>
       <button id="pause">Pause</button>
       <button id="reset">Reset</button>
