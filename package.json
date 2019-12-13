@@ -1,0 +1,22 @@
+{
+  "name": "rockmore",
+  "version": "1.0.0",
+  "description": "Named after Clara Reisenberg Rockmore, a virtuoso performer of the theremin.",
+  "main": "euclidean.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deliasound/rockmore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deliasound/rockmore/issues"
+  },
+  "homepage": "https://github.com/deliasound/rockmore#readme",
+  "dependencies": {
+    "bjorklund-js": "^0.1.2"
+  }
+}
