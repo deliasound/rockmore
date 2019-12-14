@@ -18,9 +18,12 @@
       text="javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.9/Tone.js"
     ></script>
+
     <script text="javascript" src="euclidean.js"></script>
     <script text="javascript" src="node_modules/bjorklund-js/bjorklund.min.js"></script>
-   
+   <!-- gui -->
+    <script text="javascript" src="https://g200kg.github.io/webaudio-controls/2.0/webcomponents-lite.js"></script>
+    <script text="javascript" src="https://g200kg.github.io/webaudio-controls/webaudio-controls.js"></script>  
     
 <script type="text/javascript" src="https://www.mcorp.no/lib/mcorp-2.0.js"></script>
 <script type="text/javascript">
@@ -33,7 +36,8 @@
 		if (document.readyState === "complete") run(app.motions.shared);
 		else window.onload = function () {run(app.motions.shared);};
 	};
-	app.init();
+  app.init();
+  
 </script>
   </head>
 
@@ -43,15 +47,15 @@
     </section>
     <section class="main-content">
    
-
-      <h4 id="demo">Demo</h4>
-
-    
-      <button id="play">Play</button>
-      <button id="pause">Pause</button>
-      <button id="reset">Reset</button>
-      <button id="backwards">Backwards</button>
-      <div id="data"></div>
+      
+      
+      <webaudio-knob value="60" min="1" max="200" id="bpm" src="https://g200kg.github.io/webaudio-controls/2.0/../knobs/LittlePhatty.png" sprites="100" diameter="64" valuetip="0" tooltip="Knob Test"></webaudio-knob>
+      <webaudio-param link="bpm"></webaudio-param>
+      <webaudio-knob value="6" min="1" max="32" id="steps" src="https://g200kg.github.io/webaudio-controls/2.0/../knobs/LittlePhatty.png" sprites="100" diameter="64" valuetip="0" tooltip="Knob Test"></webaudio-knob>
+      <webaudio-param link="steps"></webaudio-param>
+      <webaudio-knob value="3" min="0" max="32" id="pulses" src="https://g200kg.github.io/webaudio-controls/2.0/../knobs/LittlePhatty.png" sprites="100" diameter="64" valuetip="0" tooltip="Knob Test"></webaudio-knob>
+      <webaudio-param link="pulses"></webaudio-param>
+      <webaudio-switch id="onOff" src="https://g200kg.github.io/webaudio-controls/2.0/../knobs/switch_toggle.png" width="54" height="54"></webaudio-switch>
     </section>
   </body>
 </html>
